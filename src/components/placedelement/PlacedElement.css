@@ -65,3 +65,71 @@
   letter-spacing: 0.03em;
   /* bgColor, textColor, fontSize, fontWeight, borderRadius set inline */
 }
+
+/* ── Header Bar element ───────────────────────────────────────── */
+.el-header-bar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;      /* force single horizontal row */
+  flex-wrap: nowrap;        /* never wrap to a second line  */
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: inherit;
+  overflow: hidden;         /* clip anything that still overflows */
+  /* bgColor, textColor, fontSize, fontWeight, borderRadius set inline */
+}
+ 
+/* Logo badge — pill on the left */
+.el-header-logo {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+  flex-shrink: 0;           /* never shrink or wrap */
+}
+ 
+/* Title text */
+.el-header-title {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+ 
+/* Nav links group — centred, takes remaining space */
+.el-header-nav {
+  display: flex;
+  flex-direction: row;      /* keep links horizontal */
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 18px;
+  flex: 1;                  /* stretch to fill middle */
+  justify-content: center;
+  overflow: hidden;
+}
+ 
+.el-header-nav-link {
+  opacity: 0.8;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: default;
+}
+ 
+/* CTA button — pushed to the far right */
+.el-header-cta {
+  margin-left: auto;
+  padding: 5px 14px;
+  border: 1.5px solid;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: default;
+  background: rgba(255, 255, 255, 0.08);
+}
+ 
