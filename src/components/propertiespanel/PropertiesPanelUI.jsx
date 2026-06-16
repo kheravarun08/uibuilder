@@ -59,6 +59,21 @@ export function TwoCol({ children }) {
   return <div className="panel-two-col">{children}</div>;
 }
 
+// ── Toggle field (checkbox) ────────────────────────────────────
+export function ToggleField({ label, value, onChange }) {
+  return (
+    <div className="panel-field panel-field--toggle">
+      <label className="panel-field-label">{label}</label>
+      <div
+        className={`panel-toggle${value ? " panel-toggle--on" : ""}`}
+        onClick={() => onChange(!value)}
+      >
+        <div className="panel-toggle-thumb" />
+      </div>
+    </div>
+  );
+}
+
 // ── Empty state (no element selected) ─────────────────────────
 
 export function EmptyPanel() {
@@ -114,6 +129,24 @@ export default function PropertiesPanelUI({ element, onChange, onDelete, onDupli
           </Field>
         )}
 
+{/* Header Bar — content fields */}
+        {element.type === "headerBar" && (
+          <>
+            <Field label="Title">
+              <TextInput value={p.title} onChange={(v) => onChange("title", v)} />
+            </Field>
+            <Field label="Logo Text">
+              <TextInput value={p.logoText} onChange={(v) => onChange("logoText", v)} />
+            </Field>
+            <Field label="Nav Links (comma separated)">
+              <TextInput value={p.navLinks} onChange={(v) => onChange("navLinks", v)} />
+            </Field>
+            <Field label="CTA Label">
+              <TextInput value={p.ctaLabel} onChange={(v) => onChange("ctaLabel", v)} />
+            </Field>
+          </>
+        )}
+
         {/* Layout */}
         <Section label="Layout" />
         <TwoCol>
@@ -167,6 +200,16 @@ export default function PropertiesPanelUI({ element, onChange, onDelete, onDupli
           <Field label="Border Color">
             <ColorInput value={p.borderColor} onChange={(v) => onChange("borderColor", v)} />
           </Field>
+        )}
+
+          {/* Header Bar — visibility toggles */}
+        {element.type === "headerBar" && (
+          <>
+            <Section label="Visibility" />
+            <ToggleField label="Show Logo"     value={p.showLogo}     onChange={(v) => onChange("showLogo", v)} />
+            <ToggleField label="Show Nav Links" value={p.showNavLinks} onChange={(v) => onChange("showNavLinks", v)} />
+            <ToggleField label="Show CTA"       value={p.showCta}      onChange={(v) => onChange("showCta", v)} />
+          </>
         )}
       </div>
     </aside>

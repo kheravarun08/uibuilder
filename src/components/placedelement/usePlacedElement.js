@@ -60,3 +60,14 @@ export function getBadgeStyle(p) {
     borderRadius: p.borderRadius,
   };
 }
+
+// ── Header Bar ────────────────────────────────────────────────
+export function getHeaderBarStyle(p) {
+  return {
+    background:   p.bgColor,
+    color:        p.textColor,
+    fontSize:     p.fontSize,
+    fontWeight:   p.fontWeight ?? "500",
+    borderRadius: p.borderRadius ?? 0,
+  };
+}

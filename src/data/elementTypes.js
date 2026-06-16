@@ -44,7 +44,30 @@ const elementTypes = [
       width: 220,
       height: 42,
     },
-  }
+  },
+  // ── Header Bar ────────────────────────────────────────────────
+  {
+    type: "headerBar",
+    label: "Header Bar",
+    defaultProps: {
+      // Header-specific props
+      title: "My App",
+      logoText: "Logo",
+      navLinks: "Home, About, Contact",
+      ctaLabel: "Sign Up",
+      showLogo: true,
+      showNavLinks: true,
+      showCta: true,
+      // Standard props (auto-wired into PropertiesPanel via hasProp)
+      bgColor: "#1a1a2e",
+      textColor: "#ffffff",
+      fontSize: 14,
+      fontWeight: "500",
+      borderRadius: 0,
+      width: 800,
+      height: 60,
+    },
+  },
 ];
 
 export default elementTypes;
