@@ -1,0 +1,67 @@
+/* PlacedElement.css — all styles for placed canvas elements */
+
+/* ── Wrapper (position + selection outline set inline via props) ── */
+.placed-element {
+  position: absolute;
+  cursor: move;
+  user-select: none;
+}
+
+/* ── Selection handle (corner dot) ───────────────────────────── */
+.selection-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.4);
+  z-index: 10;
+}
+
+/* ── Button element ───────────────────────────────────────────── */
+.el-button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+  /* bgColor, textColor, fontSize, fontWeight, borderRadius set inline */
+}
+
+/* ── Text element ─────────────────────────────────────────────── */
+.el-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  line-height: 1.4;
+  /* textColor, fontSize, fontWeight set inline */
+}
+
+/* ── Input element ────────────────────────────────────────────── */
+.el-input {
+  width: 100%;
+  height: 100%;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  box-sizing: border-box;
+  /* bgColor, borderColor, borderRadius, fontSize, textColor set inline */
+}
+
+/* ── Badge element ────────────────────────────────────────────── */
+.el-badge {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  letter-spacing: 0.03em;
+  /* bgColor, textColor, fontSize, fontWeight, borderRadius set inline */
+}
